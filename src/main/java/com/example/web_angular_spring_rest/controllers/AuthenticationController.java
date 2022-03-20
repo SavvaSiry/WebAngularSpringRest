@@ -17,7 +17,6 @@ public class AuthenticationController {
 
     @GetMapping(value = "/authenticate",
             produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
-//    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<MessageToken> get() {
         return new ResponseEntity<>(
                 new MessageToken(RequestContextHolder.currentRequestAttributes().getSessionId()),

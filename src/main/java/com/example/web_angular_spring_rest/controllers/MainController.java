@@ -5,18 +5,18 @@ import com.example.web_angular_spring_rest.services.PointService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.context.request.RequestContextHolder;
 
 import java.util.List;
 
-@Controller
+@RestController
 @SessionScope
-public class MainController {
+public class            MainController {
 
     public final PointService pointService;
 
