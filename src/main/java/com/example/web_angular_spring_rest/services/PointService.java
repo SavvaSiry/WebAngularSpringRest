@@ -1,6 +1,5 @@
 package com.example.web_angular_spring_rest.services;
 
-import com.example.web_angular_spring_rest.entity.Point;
 import com.example.web_angular_spring_rest.repo.PointRepository;
 import org.springframework.stereotype.Service;
 

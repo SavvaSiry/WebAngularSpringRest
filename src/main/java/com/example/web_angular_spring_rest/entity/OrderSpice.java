@@ -3,23 +3,22 @@ package com.example.web_angular_spring_rest.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "place")
-public class Place {
+@Table(name = "order_spice")
+public class OrderSpice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "location_id")
-    private Location location;
+    @JoinColumn(name = "clan_id")
+    private Clan clan;
 
-    public Location getLocation() {
-        return location;
+    public Clan getClan() {
+        return clan;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setClan(Clan clan) {
+        this.clan = clan;
     }
 
     public Integer getId() {
