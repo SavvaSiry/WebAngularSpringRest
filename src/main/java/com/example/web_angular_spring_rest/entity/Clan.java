@@ -1,16 +1,19 @@
 package com.example.web_angular_spring_rest.entity;
 
-import javax.persistence.*;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonView;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Clan {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @JsonView(View.Clan.class)
     private String name;
-    @OneToMany(mappedBy = "clan")
-    private Set<Creature> creatures;
 
     public Clan() {
     }

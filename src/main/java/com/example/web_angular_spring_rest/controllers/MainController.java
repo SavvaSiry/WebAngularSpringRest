@@ -1,6 +1,8 @@
 package com.example.web_angular_spring_rest.controllers;
 
+import com.example.web_angular_spring_rest.entity.Creature;
 import com.example.web_angular_spring_rest.entity.Point;
+import com.example.web_angular_spring_rest.services.CreatureService;
 import com.example.web_angular_spring_rest.services.PointService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,7 +18,7 @@ import java.util.List;
 
 @RestController
 @SessionScope
-public class            MainController {
+public class MainController {
 
     public final PointService pointService;
 
@@ -28,7 +30,6 @@ public class            MainController {
     public List<Point> getPoints() {
         return pointService.getPoints(RequestContextHolder.currentRequestAttributes().getSessionId());
     }
-
 
     //    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value = "/post",

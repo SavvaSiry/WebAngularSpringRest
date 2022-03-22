@@ -1,18 +1,22 @@
 package com.example.web_angular_spring_rest.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 @Entity
 public class Creature {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonView(View.Creature.class)
     private Long id;
+    @JsonView(View.Creature.class)
     private String birthday;
+    @JsonView(View.Creature.class)
     private String name;
-    @ManyToOne
-    @JoinColumn(name="clan_id", nullable=false)
+    @JsonView(View.Creature.class)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Clan clan;
-
 
     public Long getId() {
         return id;
