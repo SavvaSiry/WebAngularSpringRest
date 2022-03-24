@@ -20,10 +20,6 @@ public class CreatureService {
         this.clanRepository = clanRepository;
     }
 
-    public void saveCreature(Creature creature) {
-        creatureRepository.save(creature);
-    }
-
     public List<Clan> getClan() {
         return clanRepository.findAll();
     }
@@ -33,7 +29,7 @@ public class CreatureService {
     }
 
     public Creature addCreature(Creature creature) {
-        saveCreature(creature);
+        creatureRepository.save(creature);
         return creature;
     }
 
