@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface CreatureRepository extends JpaRepository<Creature, Long> {
+
 }

@@ -3,23 +3,12 @@ package com.example.web_angular_spring_rest.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "location_type")
-public class LocationType {
+@Table(name = "place_type")
+public class PlaceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
-
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Integer getId() {
         return id;

@@ -10,6 +10,7 @@ import java.util.Set;
 public class Clan {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonView(View.Clan.class)
     private Long id;
     @JsonView(View.Clan.class)
     private String name;

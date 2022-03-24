@@ -3,31 +3,15 @@ package com.example.web_angular_spring_rest.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "place")
-public class Place {
+@Table(name = "worker_type")
+public class WorkerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "location_id")
-    private Location location;
-
     @Column(name = "name", nullable = false)
     private String name;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "type_id")
-    private PlaceType placeType;
-
-    public PlaceType getPlaceType() {
-        return placeType;
-    }
-
-    public void setPlaceType(PlaceType placeType) {
-        this.placeType = placeType;
-    }
 
     public String getName() {
         return name;
@@ -35,14 +19,6 @@ public class Place {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 
     public Integer getId() {

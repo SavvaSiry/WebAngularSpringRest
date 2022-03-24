@@ -1,5 +1,6 @@
 package com.example.web_angular_spring_rest.controllers;
 
+import com.example.web_angular_spring_rest.entity.Point;
 import com.example.web_angular_spring_rest.services.PointService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
