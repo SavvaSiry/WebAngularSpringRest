@@ -1,5 +1,7 @@
 package com.example.web_angular_spring_rest.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,9 +10,11 @@ public class WorkerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    @JsonView(View.WorkerType.class)
     private Integer id;
 
     @Column(name = "name", nullable = false)
+    @JsonView(View.WorkerType.class)
     private String name;
 
     public String getName() {

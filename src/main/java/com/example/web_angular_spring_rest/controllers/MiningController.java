@@ -1,9 +1,7 @@
 package com.example.web_angular_spring_rest.controllers;
 
-import com.example.web_angular_spring_rest.entity.Creature;
 import com.example.web_angular_spring_rest.entity.Mining;
 import com.example.web_angular_spring_rest.entity.View;
-import com.example.web_angular_spring_rest.services.CreatureService;
 import com.example.web_angular_spring_rest.services.MiningService;
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.http.HttpStatus;
@@ -26,7 +24,7 @@ public class MiningController {
     }
 
     @GetMapping("/mining")
-    @JsonView(View.Creature.class)
+    @JsonView(View.Mining.class)
     public List<Mining> getPoints() {
         return miningService.getMinings();
     }

@@ -1,5 +1,7 @@
 package com.example.web_angular_spring_rest.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,17 +10,21 @@ public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    @JsonView(View.Mining.class)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id")
+    @JsonView(View.Mining.class)
     private Location location;
 
     @Column(name = "name", nullable = false)
+    @JsonView(View.Mining.class)
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "type_id")
+    @JsonView(View.Mining.class)
     private PlaceType placeType;
 
     public PlaceType getPlaceType() {
